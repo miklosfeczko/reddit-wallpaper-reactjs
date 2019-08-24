@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-class SearchBar extends Component {
+class ImageList extends Component {
     render() {
         return (
             <div>
-                Hello from SearchBar!
+                Hello from ImageList!
             </div>
         )
     }
 }
 
-export default SearchBar;
+export default ImageList;
