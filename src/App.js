@@ -13,8 +13,15 @@ class App extends React.Component {
   onSearchSubmit = async (term) => {
     const response = await fetch(`${this.state.BASE_URL}${term}.json`);
     const data = await response.json();
-    this.setState({ images: data.data.children });
-    console.log(this.state.images);
+    console.log(data);
+  
+    if (!data.error) {  
+      if (!data.data.children[0].data.preview !== true) { // valid thread without pic fix.
+        if (!data.data.children[0].data.preview.enabled !== true) {
+        this.setState({ images: data.data.children });
+        }
+    }
+    }
   }
 
 render() {
@@ -23,7 +30,7 @@ render() {
     <div>
       Hello from App!
       <SearchBar onSubmit={this.onSearchSubmit} />
-      <ImageList />
+      <ImageList images={this.state.images} />
     </div>
   )
 }
