@@ -24,14 +24,17 @@ class App extends React.Component {
     }
   }
 
+  componentDidMount () {           
+    this.onSearchSubmit('wallpapers+wallpaper+widescreenwallpaper+wqhd_wallpaper');
+  }
+
 render() {
   
   return (
-    <div>
-      Hello from App!
+    <React.Fragment>
       <SearchBar onSubmit={this.onSearchSubmit} />
       <ImageList images={this.state.images} />
-    </div>
+    </React.Fragment>
   )
 }
 }
