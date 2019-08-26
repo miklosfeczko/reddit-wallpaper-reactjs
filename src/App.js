@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import './App.css';
 
 import SearchBar from './components/SearchBar/SearchBar'
