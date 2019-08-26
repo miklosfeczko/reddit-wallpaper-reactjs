@@ -15,12 +15,8 @@ class App extends React.Component {
     const data = await response.json();
     console.log(data);
   
-    if (!data.error) {  
-      if (!data.data.children[0].data.preview !== true) { // valid thread without pic fix.
-        if (!data.data.children[0].data.preview.enabled !== true) {
-        this.setState({ images: data.data.children });
-        }
-    }
+    if (!data.error) {   
+        this.setState({ images: data.data.children });  
     }
   }
 

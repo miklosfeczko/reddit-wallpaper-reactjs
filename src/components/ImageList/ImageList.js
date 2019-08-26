@@ -1,6 +1,6 @@
 import React from 'react';
 
-class SongList extends React.Component {
+class ImageList extends React.Component {
 
 render() {
   
@@ -15,7 +15,7 @@ render() {
         <div key={image.data.id} className="col-xs-12 col-md-4 col-lg-4" style={{ marginBottom:"1rem"}}>
           
           <div className="songitems__box">
-            <img 
+            <img
               className="songitems__box-img" 
               src={image.data.preview.images[0].resolutions[image.data.preview.images[0].resolutions.length -1].url.replace(/&amp;/g,"&")} 
               alt={image.data.title}/>
@@ -46,4 +46,4 @@ render() {
   }
 }
 
-export default SongList;
+export default ImageList;
