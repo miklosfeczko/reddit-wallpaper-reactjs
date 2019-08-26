@@ -16,3 +16,13 @@ img {
   margin-bottom: 2.1rem;
   margin-top: 1.3rem;
 }
+
+#dropdown {
+  color: rgb(18, 167, 18);
+  background-color: white;
+}
+
+#dropdown:hover {
+  color: white;
+  background-color: rgb(18, 167, 18);
+}
