@@ -18,7 +18,7 @@ render() {
   <div className="col-lg-12 col-md-12 col-mx-auto">
   <br/>
 
-  <Dropdown className="ml-2">
+  <Dropdown>
   <Dropdown.Toggle variant="success" id="dropdown-basic">
     Dropdown Button &nbsp;
   </Dropdown.Toggle>
@@ -30,7 +30,7 @@ render() {
   </Dropdown.Menu>
   </Dropdown>
     
-  <div className="m-2">
+  <div className>
             <div className="input-group">
                 <div className="input-group-prepend">
                     <div className="input-group-text">r/</div>

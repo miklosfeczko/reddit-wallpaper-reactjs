@@ -3,7 +3,16 @@
     margin: 0;
 }
 
+.row {
+  margin: 0rem;
+}
+
 img {
-    width: 100%;
-    height: auto;
-  }
+  width: 100%;
+  height: auto;
+}
+
+.input-group {
+  margin-bottom: 2.1rem;
+  margin-top: 1.3rem;
+}

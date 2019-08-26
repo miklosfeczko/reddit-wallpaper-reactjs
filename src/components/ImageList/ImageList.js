@@ -6,7 +6,7 @@ render() {
   
   return (
   <div className="container">
-    <div className="row m-2">
+    <div className="row">
     { this.props.images && this.props.images.map((image) => {
       if(image.data.preview) {
         if(image.data.preview.enabled) {
