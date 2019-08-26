@@ -26,10 +26,11 @@ class App extends React.Component {
   }
 
 render() {
+  const delayedSearch = _.debounce((term) => {this.onSearchSubmit(term)}, 300);
   
   return (
     <React.Fragment>
-      <SearchBar onSubmit={this.onSearchSubmit} />
+      <SearchBar onSearchTermChange={delayedSearch} placeholderText={'Search'} anime={this.sortButtonAnimeme}/>
       <ImageList images={this.state.images} />
     </React.Fragment>
   )
