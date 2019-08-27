@@ -11,7 +11,9 @@ onSearchChange(term) {
   this.props.onSearchTermChange(term);
 }
 
+
 render() {
+  
   return (
   <div className="container">
   <div className="row">
@@ -19,35 +21,36 @@ render() {
   <br/>
 
   <Dropdown>
-  <Dropdown.Toggle variant="success" id="dropdown">
-    Dropdown Button &nbsp;
-  </Dropdown.Toggle>
+    <Dropdown.Toggle variant="success" id="dropdown">
+      Dropdown Button &nbsp;
+    </Dropdown.Toggle>
 
-  <Dropdown.Menu>
-    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-  </Dropdown.Menu>
+    <Dropdown.Menu>
+      <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+      <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+      <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+    </Dropdown.Menu>
   </Dropdown>
     
-  <div className>
-            <div className="input-group">
-                <div className="input-group-prepend">
-                    <div className="input-group-text">r/</div>
-                </div>
-                <input 
-                type="text" 
-                className="form-control" 
-                onChange={e => this.onSearchChange(e.target.value)} 
-                value={this.state.term} 
-                name="search" 
-                placeholder="wallpapers"
-                spellCheck="false"
-                />
+  <div>
+    <div className="input-group">
+        <div className="input-group-prepend">
+            <div className="input-group-text">r/</div>
             </div>
+            <input 
+            type="text" 
+            className="form-control" 
+            onChange={e => this.onSearchChange(e.target.value)} 
+            value={this.state.term} 
+            name="search" 
+            placeholder="wallpapers"
+            spellCheck="false"
+            />
     </div>
-      
-    
+  </div>
+
+ 
+  
   </div>
   </div>
   </div>
