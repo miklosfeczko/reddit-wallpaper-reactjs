@@ -11,7 +11,6 @@ render() {
   <div className="container">
     <div className="row">
     { this.props.images && this.props.images.map((image) => {
-      //console.log(image.data.preview)
     
       if(image.data.preview) {
         if(image.data.preview.enabled) {
