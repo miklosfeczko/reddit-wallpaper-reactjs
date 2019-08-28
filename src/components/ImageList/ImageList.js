@@ -5,8 +5,6 @@ class ImageList extends React.Component {
 
 render() {
   
-  console.log(this.props.images.images)
-  
   return ( 
   <div className="container">
     <div className="row">
