@@ -10,37 +10,61 @@ class App extends React.Component {
     images: [],
     BASE_URL: '//www.reddit.com/r/',
     after: '',
+    before: '',
     NEW_URL: '',
-    FIRST_URL: ''
+    FIRST_URL: '',
+    page: 1
   }
 
   onSearchSubmit = async (term) => {
-    term = term + '.json' + '?after=';
+    term = term + '.json';
     this.setState({ images: [] });
     const response = await fetch(`${this.state.BASE_URL}${term}`);
     const data = await response.json();
-    console.log(response);
+   
     if (!data.error) {   
         this.setState({ 
           images: data.data.children,
           after: data.data.after,
+          before: data.data.before,
           NEW_URL: response.url,
           FIRST_URL: response.url
         });  
-    }console.log(this.state.after); console.log(this.state.NEW_URL)
+    }
   }
 
   nextPageSubmit = async () => {
     this.setState({ images: [] });
-    const response = await fetch(`${this.state.NEW_URL}${this.state.after}`);
+    const response = await fetch(`${this.state.NEW_URL}?count=${this.state.page * 25}&after=${this.state.after}`);
+    
+    const data = await response.json();
+   
+    if (!data.error) {  
+      this.setState({ 
+        images: data.data.children,
+        after: data.data.after,
+        before: data.data.before,
+        NEW_URL: this.state.FIRST_URL,
+        page: this.state.page + 1
+    });
+  }
+  }
+
+  
+  prevPageSubmit = async () => {
+    this.setState({ images: [] });
+    const response = await fetch(`${this.state.NEW_URL}?count=${((this.state.page - 1) * 25) -1}&before=${this.state.before}`);
+   
     const data = await response.json();
     if (!data.error) {  
       this.setState({ 
         images: data.data.children,
         after: data.data.after,
-        NEW_URL: this.state.FIRST_URL  
+        before: data.data.before,
+        NEW_URL: this.state.FIRST_URL,
+        page: this.state.page - 1  
     });
-  }  console.log(this.state.NEW_URL, 'NEW_URL');
+  } 
   }
   
   componentDidMount () {           
@@ -62,7 +86,8 @@ render() {
       <SearchBar onSearchTermChange={delayedSearch} placeholderText={'Search'} anime={this.sortButtonAnimeme}/>
       <ImageList images={this.state.images} />
       {content}
-      <button onClick={this.nextPageSubmit}>LOL TRYHARD</button>
+      <button onClick={this.nextPageSubmit}>NEXT PAGE</button>
+      <button onClick={this.prevPageSubmit}>PREV PAGE</button>
     </React.Fragment>
   )
 }
