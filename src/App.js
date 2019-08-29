@@ -79,7 +79,7 @@ class App extends React.Component {
     this.onSearchSubmit(`wallpapers+wallpaper+widescreenwallpaper+wqhd_wallpaper`);
   }
 
-  // SEARCH ENTRIES
+  // PREMADE SEARCH ENTRIES
   wallpapersOnSubmit = () => {
     this.onSearchSubmit(`wallpapers+wallpaper+widescreenwallpaper+wqhd_wallpaper`);
     this.setState({ currentTerm: 'wallpapers'});
@@ -87,7 +87,17 @@ class App extends React.Component {
 
   animeOnSubmit = () => {           
     this.onSearchSubmit(`animemes`);
-    this.setState({ currentTerm: 'animeme'});
+    this.setState({ currentTerm: 'animemes'});
+  }
+
+  mobileWallpapers = () => {
+    this.onSearchSubmit(`mobilewallpapers`);
+    this.setState({ currentTerm: 'mobilewallpapers'});
+  }  
+
+  widescreenWallpaper = () => {
+    this.onSearchSubmit(`WidescreenWallpaper`);
+    this.setState({ currentTerm: 'WidescreenWallpaper'});
   }
 
 render() {
@@ -105,7 +115,9 @@ render() {
       <SearchBar
       currentTerm={this.state.currentTerm}
       onSearchTermChange={delayedSearch} 
-      anime={this.animeOnSubmit} 
+      anime={this.animeOnSubmit}
+      widescreen={this.widescreenWallpaper}
+      mobile={this.mobileWallpapers} 
       default={this.wallpapersOnSubmit}
       />
       <ImageList images={this.state.images} />

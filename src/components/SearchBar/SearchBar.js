@@ -28,8 +28,9 @@ render() {
 
     <Dropdown.Menu>
       <Dropdown.Item onClick={this.props.default}>r/wallpapers</Dropdown.Item>
+      <Dropdown.Item onClick={this.props.widescreen}>r/WidescreenWallpaper</Dropdown.Item>
+      <Dropdown.Item onClick={this.props.mobile}>r/mobilewallpapers</Dropdown.Item>
       <Dropdown.Item onClick={this.props.anime}>r/animemes</Dropdown.Item>
-      <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
     </Dropdown.Menu>
   </Dropdown>
     
