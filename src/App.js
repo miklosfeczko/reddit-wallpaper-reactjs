@@ -104,10 +104,17 @@ render() {
  
   const delayedSearch = _.debounce((term) => {this.onSearchSubmit(term)}, 300);
   let content;
+  let prevButton;
   if (this.state.images.length > 0) {
     content = <div></div>
   } else {
-    content = <div>Loading...</div>
+    content = <div className="text-center wrap-content-fill">Loading...</div>
+  }
+
+  if (this.state.page !== 1) {
+    prevButton = <Button className="input-group" variant="outline-success" onClick={this.prevPageSubmit}><span>Back</span></Button>
+  } else {
+    prevButton = <Button className="back__button" variant="outline-success"><span>Back</span></Button>
   }
   
   return (
@@ -127,7 +134,7 @@ render() {
       {content} 
       </div>
       <div className="col-4">  
-      <Button className="input-group" variant="outline-success" onClick={this.prevPageSubmit}><span>Back</span></Button>
+      {prevButton}
       </div>
       <div className="col-4"> 
       <Button className="page__button">Page: {this.state.page}</Button>

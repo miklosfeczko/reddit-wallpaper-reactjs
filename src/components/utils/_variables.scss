@@ -1,5 +1,5 @@
 // Main background
-$background: #262728;
+$background: linear-gradient(to right bottom, #eaeefa, #eaeefa);
 
 // Header
 $header-background: #1d1e1f;
@@ -8,6 +8,13 @@ $header-icons: #666666;
 
 // Scrollbar
 $scrollbar-color: #3f3f3f;
+
+// Button
+// back
+$back-btn-background: rgb(175, 175, 175);
+// page
+$page-btn-color: rgb(46, 119, 255);
+
 
 // Selection
 $selection-color: rgba(200,200,255,.1);

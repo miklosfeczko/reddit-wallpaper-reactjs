@@ -6,7 +6,7 @@
 }
 
 body {
-background-image: linear-gradient(to right bottom, #eaeefa, #eaeefa);
+background-image: $background;
 }
 
 .row {
@@ -21,6 +21,9 @@ img {
 .input-group {
   margin-bottom: 2.5rem;
   margin-top: 1rem;
+  .not-allowed {
+    cursor: not-allowed;
+  }
 }
 
 .next__button {
@@ -30,21 +33,76 @@ img {
   text-align: right;
 }
 
+.back__button {
+  width: 100%;
+  margin-bottom: 2.5rem;
+  margin-top: 1rem;
+  text-align: left;
+  cursor: not-allowed!important;
+  background-color: $back-btn-background;
+  color: black;
+  border-color: transparent;
+  &:hover {
+    background-color: $back-btn-background;
+    color: black;
+    border-color: transparent;
+  }
+}
+
 .page__button {
   width: 100%;
   margin-bottom: 2.5rem;
   margin-top: 1rem;
   text-align: center;
   background-color: white;
-  color: rgb(46, 119, 255);
+  color: $page-btn-color;
   border: solid 1px #d4dcf7;
 
   &:hover {
       background-color: white;
-      color: rgb(46, 119, 255);
+      color: $page-btn-color;
       border: solid 1px #d4dcf7;
   }
 }
 
+@media only screen and (min-width: 320px) {
+  .wrap-content-fill {
+  min-height: 60vh;
+  }
+}
 
+@media only screen and (min-width: 350px) {
+  .wrap-content-fill {
+  min-height: 68vh;
+  }
+}
 
+@media only screen and (min-width: 600px) {
+  .wrap-content-fill {
+  min-height: 75vh;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .wrap-content-fill {
+  min-height: 65vh;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .wrap-content-fill {
+  min-height: 74vh;
+  }
+}
+
+@media only screen and (min-width: 1921px) {
+  .wrap-content-fill {
+  min-height: 78vh;
+  }
+}
+
+@media only screen and (min-width: 2600px) {
+  .wrap-content-fill {
+  min-height: 88vh;
+  }
+}
