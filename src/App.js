@@ -96,6 +96,7 @@ render() {
       <Button className="input-group" variant="outline-success" onClick={this.prevPageSubmit}><span>Back</span></Button>
       </div>
       <div className="col-4"> 
+      <div>{this.state.page}</div>
       </div>
       <div className="col-4">  
       <Button className="next__button" variant="outline-success" onClick={this.nextPageSubmit}>Next</Button>

@@ -1,19 +1,6 @@
 @import '../utils/variables';
-
-.songitems_buttons {
-    border: solid 2px $background;
-    background: transparent;
-    padding: 0.4rem 0.6rem;
-    margin: 0 0.2rem;
-    border-radius: 1px;
-    font-size: 0.8rem;
-    text-transform: none;
-    font-weight: 500;
-    margin-left: 0.7rem;
-    text-decoration: none;
-}
   
-.songitems__box {
+.image__box {
     background: white;
     padding-bottom: 1rem;
     border: solid 1px #d4dcf7;
@@ -32,17 +19,11 @@ img {
     -ms-user-select: none;
 }
   
-.songitems__text {
+.imageitems__text {
     margin-left: 15px;
 }
   
-hr {
-    width: 90%;
-    border-color: $scrollbar-color;
-    margin-right: 45px;
-}
-  
-.songitems__title {
+.imageitems__title {
     text-transform: none;
     font-weight: 400;
     font-size: 1rem;
@@ -52,7 +33,7 @@ hr {
     line-height: 1;
 }
   
-.songitems__subtitle {
+.imageitems__subtitle {
     text-transform: none;
     font-weight: 600;
     font-size: 0.8rem;
@@ -60,7 +41,7 @@ hr {
     color: black;
 }
   
-.songitems__subtitle span {
+.imageitems__subtitle span {
     text-transform: none;
     font-weight: 400;
     font-size: 0.8rem;

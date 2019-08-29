@@ -16,16 +16,15 @@ render() {
       return (
         <div key={image.data.id} className="col-xs-12 col-md-4 col-lg-4" style={{ marginBottom:"1rem"}}>
        
-          <div className="songitems__box">
-            <img
-              className="songitems__box-img" 
+          <div className="image__box">
+            <img 
               src={image.data.preview.images[0].resolutions[image.data.preview.images[0].resolutions.length -1].url.replace(/&amp;/g,"&")} 
               alt={image.data.title}/>
-              <div className="songitems__text">
-              <h5 className="songitems__title">
+              <div className="imageitems__text">
+              <h5 className="imageitems__title">
                  {image.data.title}
               </h5>
-              <p className="songitems__subtitle"> <span>
+              <p className="imageitems__subtitle"> <span>
                  Posted on r/{image.data.subreddit}
               </span></p>
               </div>
