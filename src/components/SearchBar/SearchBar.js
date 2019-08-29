@@ -21,7 +21,7 @@ render() {
   <br/>
 
   <Dropdown>
-    <Dropdown.Toggle variant="success" id="dropdown">
+    <Dropdown.Toggle variant="outline-success">
       Dropdown Button &nbsp;
     </Dropdown.Toggle>
 

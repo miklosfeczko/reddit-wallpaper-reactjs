@@ -2,6 +2,8 @@ import React from 'react';
 import _ from 'lodash';
 import './App.scss';
 
+import Button from 'react-bootstrap/Button'
+
 import SearchBar from './components/SearchBar/SearchBar'
 import ImageList from './components/ImageList/ImageList'
 
@@ -85,9 +87,21 @@ render() {
     <React.Fragment>
       <SearchBar onSearchTermChange={delayedSearch} placeholderText={'Search'} anime={this.sortButtonAnimeme}/>
       <ImageList images={this.state.images} />
-      {content}
-      <button onClick={this.nextPageSubmit}>NEXT PAGE</button>
-      <button onClick={this.prevPageSubmit}>PREV PAGE</button>
+      <div className="container">
+      <div className="row">
+      <div className="col-lg-12 col-md-12 col-mx-auto">
+      {content} 
+      </div>
+      <div className="col-4">  
+      <Button className="input-group" variant="outline-success" onClick={this.prevPageSubmit}><span>Back</span></Button>
+      </div>
+      <div className="col-4"> 
+      </div>
+      <div className="col-4">  
+      <Button className="next__button" variant="outline-success" onClick={this.nextPageSubmit}>Next</Button>
+      </div>
+      </div>
+      </div>
     </React.Fragment>
   )
 }

@@ -1,6 +1,12 @@
+@import './components/utils/variables';
+
 * {
     padding: 0;
     margin: 0;
+}
+
+body {
+background-image: linear-gradient(to right bottom, #eaeefa, #eaeefa);
 }
 
 .row {
@@ -17,12 +23,9 @@ img {
   margin-top: 1rem;
 }
 
-#dropdown {
-  color: rgb(18, 167, 18);
-  background-color: white;
-}
-
-#dropdown:hover {
-  color: white;
-  background-color: rgb(18, 167, 18);
+.next__button {
+  width: 100%;
+  margin-bottom: 2.5rem;
+  margin-top: 1rem;
+  text-align: right;
 }

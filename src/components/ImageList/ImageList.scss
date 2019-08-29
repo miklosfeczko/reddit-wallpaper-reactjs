@@ -14,9 +14,10 @@
 }
   
 .songitems__box {
-    background: $header-background;
+    background: white;
     padding-bottom: 1rem;
-    border-radius: 0px;
+    border: solid 1px #d4dcf7;
+    border-radius: 4px;
     width: 100%;
     text-align: left;
     overflow: hidden;  
@@ -43,11 +44,11 @@ hr {
   
 .songitems__title {
     text-transform: none;
-    font-weight: 600;
-    font-size: 0.8rem;
+    font-weight: 400;
+    font-size: 1rem;
     letter-spacing: none;
-    color: $header-text;
-    padding: 1.5rem 0 0rem 0;
+    color: rgb(46, 119, 255);
+    padding: 1.5rem 1rem 0rem 0;
     line-height: 1;
 }
   
@@ -56,7 +57,7 @@ hr {
     font-weight: 600;
     font-size: 0.8rem;
     letter-spacing: none;
-    color: #bebebe;
+    color: black;
 }
   
 .songitems__subtitle span {
