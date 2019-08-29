@@ -64,9 +64,14 @@ class App extends React.Component {
         after: data.data.after,
         before: data.data.before,
         NEW_URL: this.state.FIRST_URL,
-        page: this.state.page - 1  
+        //page: this.state.page - 1  
     });
   } 
+  if (this.state.page <= 1) {
+    return null;
+  } else {
+    this.setState({ page: this.state.page - 1})
+  }
   }
   
   componentDidMount () {           
@@ -95,8 +100,8 @@ render() {
       <div className="col-4">  
       <Button className="input-group" variant="outline-success" onClick={this.prevPageSubmit}><span>Back</span></Button>
       </div>
-      <div className="col-4"> 
-      <div>{this.state.page}</div>
+      <div className="col-4 text-center"> 
+      <div className="page__button">Page: {this.state.page}</div>
       </div>
       <div className="col-4">  
       <Button className="next__button" variant="outline-success" onClick={this.nextPageSubmit}>Next</Button>
