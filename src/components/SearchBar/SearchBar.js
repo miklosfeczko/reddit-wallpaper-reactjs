@@ -4,7 +4,9 @@ import Dropdown from 'react-bootstrap/Dropdown'
 
 class SearchBar extends React.Component {
 
-state = {term: ''};
+state = {
+  term: ''
+};
 
 onSearchChange(term) {
   this.setState({ term });
@@ -13,7 +15,6 @@ onSearchChange(term) {
 
 
 render() {
-  
   return (
   <div className="container">
   <div className="row">
@@ -22,12 +23,12 @@ render() {
 
   <Dropdown>
     <Dropdown.Toggle variant="outline-success">
-      Dropdown Button &nbsp;
+      r/{this.props.currentTerm} &nbsp;
     </Dropdown.Toggle>
 
     <Dropdown.Menu>
-      <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-      <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+      <Dropdown.Item onClick={this.props.default}>r/wallpapers</Dropdown.Item>
+      <Dropdown.Item onClick={this.props.anime}>r/animemes</Dropdown.Item>
       <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
     </Dropdown.Menu>
   </Dropdown>
@@ -43,7 +44,7 @@ render() {
             onChange={e => this.onSearchChange(e.target.value)} 
             value={this.state.term} 
             name="search" 
-            placeholder="wallpapers"
+            placeholder="Type here to search"
             spellCheck="false"
             />
     </div>

@@ -15,7 +15,8 @@ class App extends React.Component {
     before: '',
     NEW_URL: '',
     FIRST_URL: '',
-    page: 1
+    page: 1,
+    currentTerm: ''
   }
 
   onSearchSubmit = async (term) => {
@@ -23,14 +24,14 @@ class App extends React.Component {
     this.setState({ images: [] });
     const response = await fetch(`${this.state.BASE_URL}${term}`);
     const data = await response.json();
-   
     if (!data.error) {   
         this.setState({ 
           images: data.data.children,
           after: data.data.after,
           before: data.data.before,
           NEW_URL: response.url,
-          FIRST_URL: response.url
+          FIRST_URL: response.url,
+          currentTerm: 'wallpapers'
         });  
     }
   }
@@ -78,6 +79,17 @@ class App extends React.Component {
     this.onSearchSubmit(`wallpapers+wallpaper+widescreenwallpaper+wqhd_wallpaper`);
   }
 
+  // SEARCH ENTRIES
+  wallpapersOnSubmit = () => {
+    this.onSearchSubmit(`wallpapers+wallpaper+widescreenwallpaper+wqhd_wallpaper`);
+    this.setState({ currentTerm: 'wallpapers'});
+  }
+
+  animeOnSubmit = () => {           
+    this.onSearchSubmit(`animemes`);
+    this.setState({ currentTerm: 'animeme'});
+  }
+
 render() {
  
   const delayedSearch = _.debounce((term) => {this.onSearchSubmit(term)}, 300);
@@ -90,7 +102,12 @@ render() {
   
   return (
     <React.Fragment>
-      <SearchBar onSearchTermChange={delayedSearch} placeholderText={'Search'} anime={this.sortButtonAnimeme}/>
+      <SearchBar
+      currentTerm={this.state.currentTerm}
+      onSearchTermChange={delayedSearch} 
+      anime={this.animeOnSubmit} 
+      default={this.wallpapersOnSubmit}
+      />
       <ImageList images={this.state.images} />
       <div className="container">
       <div className="row">
@@ -100,8 +117,8 @@ render() {
       <div className="col-4">  
       <Button className="input-group" variant="outline-success" onClick={this.prevPageSubmit}><span>Back</span></Button>
       </div>
-      <div className="col-4 text-center"> 
-      <div className="page__button">Page: {this.state.page}</div>
+      <div className="col-4"> 
+      <Button className="page__button">Page: {this.state.page}</Button>
       </div>
       <div className="col-4">  
       <Button className="next__button" variant="outline-success" onClick={this.nextPageSubmit}>Next</Button>

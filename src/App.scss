@@ -33,6 +33,18 @@ img {
 .page__button {
   width: 100%;
   margin-bottom: 2.5rem;
-  margin-top: 1.4rem;
+  margin-top: 1rem;
   text-align: center;
+  background-color: white;
+  color: rgb(46, 119, 255);
+  border: solid 1px #d4dcf7;
+
+  &:hover {
+      background-color: white;
+      color: rgb(46, 119, 255);
+      border: solid 1px #d4dcf7;
+  }
 }
+
+
+
