@@ -31,6 +31,7 @@ render() {
       <Dropdown.Item onClick={this.props.widescreen}>r/WidescreenWallpaper</Dropdown.Item>
       <Dropdown.Item onClick={this.props.mobile}>r/mobilewallpapers</Dropdown.Item>
       <Dropdown.Item onClick={this.props.anime}>r/animemes</Dropdown.Item>
+      <Dropdown.Item>by Miklos Feczko</Dropdown.Item>
     </Dropdown.Menu>
   </Dropdown>
     
@@ -50,9 +51,7 @@ render() {
             />
     </div>
   </div>
-
  
-  
   </div>
   </div>
   </div>

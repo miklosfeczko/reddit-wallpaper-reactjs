@@ -21,9 +21,11 @@ render() {
               src={image.data.preview.images[0].resolutions[image.data.preview.images[0].resolutions.length -1].url.replace(/&amp;/g,"&")} 
               alt={image.data.title}/>
               <div className="imageitems__text">
+              <a href={image.data.url} target="_blank" rel="noopener noreferrer">
               <h5 className="imageitems__title">
                  {image.data.title}
               </h5>
+              </a>
               <p className="imageitems__subtitle"> <span>
                  Posted on r/{image.data.subreddit}
               </span></p>
