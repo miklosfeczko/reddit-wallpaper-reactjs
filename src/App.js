@@ -25,7 +25,8 @@ class App extends React.Component {
     const response = await fetch(`${this.state.BASE_URL}${term}`);
     const data = await response.json();
     if (!data.error) {   
-        this.setState({ 
+        this.setState({
+          page: 1, 
           images: data.data.children,
           after: data.data.after,
           before: data.data.before,
@@ -82,22 +83,34 @@ class App extends React.Component {
   // PREMADE SEARCH ENTRIES
   wallpapersOnSubmit = () => {
     this.onSearchSubmit(`wallpapers+wallpaper+widescreenwallpaper+wqhd_wallpaper`);
-    this.setState({ currentTerm: 'wallpapers'});
+    this.setState({
+      page: 1,
+      currentTerm: 'wallpapers'
+    });
   }
 
   animeOnSubmit = () => {           
     this.onSearchSubmit(`animemes`);
-    this.setState({ currentTerm: 'animemes'});
+    this.setState({ 
+      page: 1,
+      currentTerm: 'animemes'
+    });
   }
 
   mobileWallpapers = () => {
     this.onSearchSubmit(`mobilewallpapers`);
-    this.setState({ currentTerm: 'mobilewallpapers'});
+    this.setState({ 
+      page: 1,
+      currentTerm: 'mobilewallpapers'
+    });
   }  
 
   widescreenWallpaper = () => {
     this.onSearchSubmit(`WidescreenWallpaper`);
-    this.setState({ currentTerm: 'WidescreenWallpaper'});
+    this.setState({ 
+      page: 1,
+      currentTerm: 'WidescreenWallpaper'
+    });
   }
 
 render() {
