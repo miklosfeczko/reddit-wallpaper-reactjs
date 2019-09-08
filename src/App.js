@@ -31,8 +31,7 @@ class App extends React.Component {
           after: data.data.after,
           before: data.data.before,
           NEW_URL: response.url,
-          FIRST_URL: response.url,
-          currentTerm: 'wallpapers'
+          FIRST_URL: response.url
         });  
     }
   }

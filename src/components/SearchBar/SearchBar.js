@@ -23,7 +23,7 @@ render() {
 
   <Dropdown>
     <Dropdown.Toggle variant="outline-success">
-      r/{this.props.currentTerm} &nbsp;
+      r/{this.props.currentTerm || 'wallpapers'} &nbsp;
     </Dropdown.Toggle>
 
     <Dropdown.Menu>
